@@ -42,3 +42,6 @@
 
 # FreeCad backup files
 *.FCBak
+
+# IntelliJ IDEA files
+.idea/
