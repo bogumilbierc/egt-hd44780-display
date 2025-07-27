@@ -26,7 +26,6 @@ MAX6675 thermocoupleBank3(THERMO_CLOCK, THERMO_CS_BANK_3, THERMO_SLAVE_OUT);
 MAX6675 thermocoupleBank4(THERMO_CLOCK, THERMO_CS_BANK_4, THERMO_SLAVE_OUT);
 
 void setup() {
-  // put your setup code here, to run once:
   setupScreen();
 
 #if DEBUG_ENABLED == true
@@ -44,9 +43,6 @@ void setup() {
 void loop() {
   printFirstLine();
   printSecondLine();
-
-  setAllPinsToHigh();
-  delay(1000);
 }
 
 void setupScreen() {
@@ -98,6 +94,8 @@ int getEgt(MAX6675 thermocouple, int bankIndex) {
   Serial.println(tempCelsius);
 #endif
 
+  setAllPinsToHigh();  // this should be redundant, as library does set the pin to HIGH, but...
+  delay(300);          // to make sure that MAX6675 stops emitting data to the bus
   return int(trunc(tempCelsius));
 }
 
