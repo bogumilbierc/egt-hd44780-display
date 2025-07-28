@@ -4,6 +4,10 @@ EGT display using Arduino with HD44780 screen and four MAX6675 EGT amplifiers
 
 ## Preview ##
 
+### In car ###
+
+![preview_in_car](./docs/pictures/preview_in_car.png)
+
 ### MAX6675 modules with wiring ###
 
 ![assembled_max6675](./docs/pictures/assembled_max6675.png)
